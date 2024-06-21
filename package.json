@@ -1,0 +1,14 @@
+{
+  "name": "smart-home-solutions",
+  "version": "1.0.0",
+  "description": "Manage your home without sending your data to the world.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dylan Mahaffey",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
