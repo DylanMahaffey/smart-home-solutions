@@ -10,6 +10,10 @@ client.startDiscovery().on('device-new', (device) => {
     console.log(device)
 });
 
+router.get('/', function (req, res) {
+    res.sendFile(__dirname, "../public")
+})
+
 /* GET home page. */
 router.get('/office', function (req, res) {
     const device = client.devices.get("80066D894D81FAAF8F5B674CACA3AF57222ED2D2");
