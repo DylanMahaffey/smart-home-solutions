@@ -5,8 +5,9 @@ var {toggleDevice} = require("../business/devices")
 
 router.get('/:id', async function (req, res) {
     var {id} = req.params;
-    
-    res.json({success: await toggleDevice(id)})
+    var success = await toggleDevice(id)
+    console.log(success)
+    res.json({success })
 })
 
 /* GET home page. */

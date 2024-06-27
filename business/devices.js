@@ -2,9 +2,7 @@ const { Client } = require('tplink-smarthome-api');
 
 const client = new Client();
 
-client.startDiscovery().on('device-new', (device) => {
-    // device.getSysInfo().then(console.log);
-});
+client.startDiscovery();
 
 const getAllDevices = async () => {
     var devices = []
@@ -19,12 +17,13 @@ const getAllDevices = async () => {
     return devices
 }
 
+
 const toggleDevice = async (id) => {
     const device = client.devices.get(id)
-    device.togglePowerState()
-    return await !device.getPowerState();
+    return await device.togglePowerState();
 }
 
+client.stopDiscovery();
 module.exports = {
     client,
     getAllDevices,
