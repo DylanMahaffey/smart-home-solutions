@@ -21,8 +21,7 @@ const getAllDevices = async () => {
 
 const toggleDevice = async (id) => {
     const device = client.devices.get(id)
-    device.togglePowerState()
-    return await !device.getPowerState();
+    return await device.togglePowerState();
 }
 
 module.exports = {
