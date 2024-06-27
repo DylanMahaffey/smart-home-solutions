@@ -1,17 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path')
-// const { Client } = require('tplink-smarthome-api');
+var {toggleDevice} = require("../business/devices")
 
-// const client = new Client();
 
-// client.startDiscovery().on('device-new', (device) => {
-//     // device.getSysInfo().then(console.log);
-//     console.log(device.deviceId)
-// });
-
-router.get('/', function (req, res) {
-    res.sendFile(__dirname, "../public")
+router.get('/:id', async function (req, res) {
+    var {id} = req.params;
+    
+    res.json({success: await toggleDevice(id)})
 })
 
 /* GET home page. */
