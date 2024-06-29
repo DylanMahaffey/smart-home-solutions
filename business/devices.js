@@ -25,7 +25,6 @@ const toggleDevice = async (id) => {
 
 client.stopDiscovery();
 module.exports = {
-    client,
     getAllDevices,
     toggleDevice
 };
